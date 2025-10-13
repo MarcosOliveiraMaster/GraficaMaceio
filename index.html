@@ -1,754 +1,146 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>Grafica Maceió</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="Assets/css/fontawesome.css">
-    <link rel="stylesheet" href="Assets/css/templatemo-onix-digital.css">
-    <link rel="stylesheet" href="Assets/css/animated.css">
-    <link rel="stylesheet" href="Assets/css/owl.css">
-<!--
-
-TemplateMo 565 Onix Digital
-
-https://templatemo.com/tm-565-onix-digital
-
--->
-  </head>
-
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>30 Questões de Acústica — Master</title>
+  <style>
+    :root{--orange:#ff7a00;--white:#ffffff;--bg:#fff7ef}
+    body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#222;margin:0;padding:24px}
+    .container{max-width:980px;margin:0 auto;background:var(--white);border-radius:12px;padding:24px;box-shadow:0 6px 30px rgba(0,0,0,0.08)}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{background:var(--orange);color:var(--white);width:56px;height:56px;border-radius:10px;display:grid;place-items:center;font-weight:700}
+    h1{margin:0;font-size:1.4rem}
+    p.lead{color:#555;margin-top:6px}
+    .controls{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
+    button{background:var(--orange);color:var(--white);border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+    .questions{margin-top:8px}
+    .q{padding:12px;border-radius:8px;border:1px dashed #ffd6b3;margin-bottom:10px}
+    .q h3{margin:0 0 8px 0;font-size:1rem}
+    .options label{display:block;margin:6px 0;padding:8px;border-radius:6px;cursor:pointer}
+    .options input{margin-right:10px}
+    .footer{margin-top:18px;color:#666;font-size:0.9rem}
+    .answer-key{display:none;margin-top:12px;background:#fff4e6;padding:12px;border-radius:8px}
+    .credit{font-size:0.85rem;color:#444;margin-top:8px}
+    @media (max-width:600px){.container{padding:16px}}
+  </style>
+</head>
 <body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
+  <div class="container">
+    <header>
+      <div class="logo">AC</div>
+      <div>
+        <h1>30 Questões de Acústica</h1>
+        <p class="lead">20 teóricas + 10 com cálculo — baseadas em provas tipo ENEM, FUVEST, ITA e FGV.</p>
       </div>
+    </header>
+
+    <div class="controls">
+      <button id="check">Verificar respostas</button>
+      <button id="reset">Limpar</button>
+      <button id="showKey">Mostrar gabarito</button>
+    </div>
+
+    <form id="quiz" class="questions"></form>
+
+    <div class="answer-key" id="answerKey"></div>
+
+    <div class="footer">
+      <div class="credit">Questões selecionadas a partir de bancos e listas públicas (ENEM, FUVEST, ITA, FGV, listas didáticas). Fontes listadas abaixo.</div>
+      <ol>
+        <li>Coletâneas e bancos de questões: QConcursos / ENEM / Vestibulares.</li>
+        <li>Plataformas de questões: EstudePrisma (FUVEST/ENEM).</li>
+        <li>Listas didáticas: Mundo Educação, Brasil Escola.</li>
+        <li>Provas antigas: site do ITA / FUVEST (PDFs oficiais).</li>
+      </ol>
     </div>
   </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="Assets/images/logo.png">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Início</a></li>
-              <li class="scroll-to-section"><a href="#services">Serviços</a></li>
-              <li class="scroll-to-section"><a href="#about">Sobre nós</a></li>
-              <li class="scroll-to-section"><a href="#portfolio">Nossos trabalhos</a></li>
-              <!-- Remover Seção -->
-              <!-- <li class="scroll-to-section"><a href="#video">Videos</a></li>  -->
-
-              <li class="scroll-to-section"><a href="#contact">Onde Estamos</a></li> 
-              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#contact">Whatsapp</a></div></li> 
-            </ul>        
-            <a class='menu-trigger'>
-                <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
-
-  <div class="main-banner" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-6 align-self-center">
-
-
-
-              <div class="owl-carousel owl-banner">
-                <!-- Menasgem 01 -->
-                <div class="item header-text">
-                  <h6>Sua Comunicação Visual Completa</h6>
-                  <h2>A <em>Solução visual</em> ideal para seu <span>Negócio</span> </h2>
-                  <p>Conheça a gráfica mais bem avaliada de Maceió! Descubra como fortalecer sua marca e atrair mais clientes.</p>
-                  <div class="down-buttons">
-                    <div class="main-blue-button-hover">
-                      <a href="#contact">Nos contate agora</a>
-                    </div>
-                    <div class="call-button">
-                      <a href="#"><i class="fa fa-phone"></i> (82) 9.8839-0900 </a>
-                    </div>
-                  </div>
-                </div>
-
-                
-
-                <!-- mensagem 02 -->
-                <!-- <div class="item header-text">
-                  <h6>Feito em Maceió, para Maceió</h6>
-                  <h2>Get the <em>best ideas</em> for <span>your website</span></h2>
-                  <p>You are NOT allowed to redistribute this template ZIP file on any Free CSS collection websites. Contact us for more info. Thank you.</p>
-                  <div class="down-buttons">
-                    <div class="main-blue-button-hover">
-                      <a href="#services">Our Services</a>
-                    </div>
-                    <div class="call-button">
-                      <a href="#"><i class="fa fa-phone"></i> 090-080-0760</a>
-                    </div>
-                  </div>
-                </div> -->
-
-                <!-- Mensagem 03 -->
-                <!-- <div class="item header-text">
-                  <h6>Video Tutorials</h6>
-                  <h2>Watch <em>our videos</em> for your <span>projects</span></h2>
-                  <p>Please <a rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a> a little via PayPal if this digital marketing HTML template is useful for you. Thank you.</p>
-                  <div class="down-buttons">
-                    <div class="main-blue-button-hover">
-                      <a href="#video">Watch Videos</a>
-                    </div>
-                    <div class="call-button">
-                      <a href="#"><i class="fa fa-phone"></i> 050-040-0320</a>
-                    </div>
-                  </div>
-                </div> -->
-
-              </div>
-
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div id="services" class="our-services section">
-    <div class="services-right-dec">
-      <img src="Assets/images/services-right-dec.png" alt="">
-    </div>
-    <div class="container">
-      <div class="services-left-dec">
-        <img src="Assets/images/services-left-dec.png" alt="">
-      </div>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="section-heading">
-            <h2>Nosso <em>serviços</em> & <span>Diferenciais </span></h2>
-            <!-- <span>Our Services</span> -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Seção Serviços -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-services">
-
-            <div class="item">
-              <h4>Adesivos</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/adesivo.png" alt=""></div>
-              <p>Versáteis, criativos e duradouros. Do pequeno brinde ao grande destaque, fortalecem sua marca em qualquer superfície.</p>
-            </div>
-
-            <div class="item">
-              <h4>Canecas</h4>
-              <div class="icon" ><img src="Assets/images/Icon3d/mug.png" alt=""></div>
-              <p>O brinde favorito de empresas e clientes. Personalização de alta definição, ideal para presentes corporativos ou lembranças especiais.</p>
-            </div>
-
-            <div class="item">
-              <h4>Panfletos</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/folheto.png" alt=""></div>
-              <p>Material clássico de divulgação, com impressão nítida e papel de qualidade para levar sua mensagem diretamente às mãos do público.</p>
-            </div>
-
-            <div class="item">
-              <h4>Recituários profissionais</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/receita.png" alt=""></div>
-              <p>Indispensáveis para médicos e dentistas. Impressão clara, design profissional e papel adequado ao uso diário no consultório.</p>
-            </div>
-
-            <div class="item">
-              <h4>Cavaletes para negócios</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/cavalete.png" alt=""></div>
-              <p>Resistentes, práticos e visíveis. Uma solução direta para destacar ofertas, cardápios e informações na porta do seu negócio.</p>
-            </div>
-
-            <div class="item">
-              <h4>Displays de PVC</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/displayPVC.png" alt=""></div>
-              <p>Itens essenciais para marcar presença em pontos de venda e feiras. Comunicação visual de alto com acabamento premium.</p>
-            </div>
-
-            <div class="item">
-              <h4>Pastas profissionais</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/pasta.png" alt=""></div>
-              <p>Transmitam profissionalismo em cada reunião. Nossas pastas personalizadas unem praticidade e identidade visual corporativa.</p>
-            </div>
-
-            <div class="item">
-              <h4>Agendas</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/agenda.png" alt=""></div>
-              <p>Planejamento e organização com estilo. Personalizadas com sua marca, ideais para brindes corporativos e clientes fiéis.</p>
-            </div>
-
-            <div class="item">
-              <h4>Catálogos</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/tag.png" alt=""></div>
-              <p>Apresente seus produtos com clareza e sofisticação. Impressão de qualidade que transforma cada página em uma vitrine poderosa.</p>
-            </div>
-
-            <div class="item">
-              <h4>Cartões de apresentação</h4>
-              <div class="icon"><img src="Assets/images/Icon3d/cartao.png" alt=""></div>
-              <p>O primeiro passo de toda conexão profissional. Design elegante e impressão impecável para causar boa impressão desde o início.</p>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sobre nós -->
-  <div id="about" class="about-us section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="left-image">
-            <img src="Assets/images/about-left-image.png" alt="Two Girls working together">
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="section-heading">
-            <!-- título Original + efeitos -->
-            <!-- <h2>sobre nós <em>SEO Tools</em> &amp; <span>Project</span> Management</h2> -->
-
-            <h2>Nossa história</h2>
-            <p>
-              
-            Temos como compromisso atender cada pedido com excelência, unindo inovação, tecnologia e qualidade em impressão. Somos especialistas em comunicação visual, entregando soluções que transformam ideias em materiais de impacto.
-            <br><br>
-            Nosso propósito é crescer lado a lado com os empresários de Maceió, fortalecendo marcas, impulsionando negócios e contribuindo para o desenvolvimento da nossa cidade.
-
-            </p>
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="Assets/images/service-icon-01.png" alt="">
-                    </div>
-                    <div class="count-digit">+25 mil</div>
-                    <div class="count-title">Projetos realizados</div>
-                    <!-- texto descrição -->
-                    <!-- <p>Lorem ipsum dolor sitti amet, consectetur.</p> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="Assets/images/service-icon-02.png" alt="">
-                    </div>
-                    <div class="count-digit">+5 mil</div>
-                    <div class="count-title">Clientes satisfeitos</div>
-                    <!-- texto descrição -->
-                    <!-- <p>Lorem ipsum dolor sitti amet, consectetur.</p> -->
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="fact-item">
-                  <div class="count-area-content">
-                    <div class="icon">
-                      <img src="Assets/images/service-icon-03.png" alt="">
-                    </div>
-                    <div class="count-digit">120</div>
-                    <div class="count-title">Parceirias comerciais</div>
-                    <!-- texto descrição -->
-                    <!-- <p>Lorem ipsum dolor sitti amet, consectetur.</p> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Seção Portifólio -->
-  <div id="portfolio" class="our-portfolio section">
-    <div class="portfolio-left-dec">
-      <img src="Assets/images/portfolio-left-dec.png" alt="">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="section-heading">
-            <h2>Nossos <em>Produtos</em> & <span> serviços </span></h2>
-            <!-- <span>Produtos & Serviços</span> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-portfolio">
-            <div class="item">
-              <div class="thumb">
-                <img src="Assets/images/Arte (1).png" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4>Cartões personalizados</h4></a>
-                    <span>Cartões de Apresentação</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="Assets/images/Arte (2).png" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>Cardápios</h4></a>
-                    <span>Cardápios personalizados</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="Assets/images/Arte (3).png" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent"><h4>Recituários</h4></a>
-                    <span>Recituários para médicos e profissionais</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="thumb">
-                <img src="Assets/images/Arte (4).png" alt="">
-                <div class="hover-effect">
-                  <div class="inner-content">
-                    <a href="#"><h4>Garrafas personalizadas</h4></a>
-                    <span>Garrafas personalizadas</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Nossos planos - área de assinatura - DESATIVADA -->
-  <!-- <div id="pricing" class="pricing-tables">
-    <div class="tables-left-dec">
-      <img src="assets/images/tables-left-dec.png" alt="">
-    </div>
-    <div class="tables-right-dec">
-      <img src="assets/images/tables-right-dec.png" alt="">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="section-heading">
-            <h2>Select a suitable <em>plan</em> for your next <span>projects</span></h2>
-            <span>Our Plans</span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="item first-item">
-            <h4>Starter Plan</h4>
-            <em>$160/mo</em>
-            <span>$140</span>
-            <ul>
-              <li>10 Projects</li>
-              <li>100 GB space</li>
-              <li>20 SEO checkups</li>
-              <li>Basic Support</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <a href="#">Get Started</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item second-item">
-            <h4>Standard Plan</h4>
-            <em>$240/mo</em>
-            <span>$200</span>
-            <ul>
-              <li>20 Projects</li>
-              <li>200 GB space</li>
-              <li>50 SEO checkups</li>
-              <li>Pro Support</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <a href="#">Get it Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="item third-item">
-            <h4>Advanced Plan</h4>
-            <em>$360/mo</em>
-            <span>$280</span>
-            <ul>
-              <li>30 Projects</li>
-              <li>300 GB space</li>
-              <li>100 SEO checkups</li>
-              <li>Best Support</li>
-            </ul>
-            <div class="main-blue-button-hover">
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-<!-- Área de inscrição - DESATIVADA -->
-  <!-- <div id="subscribe" class="subscribe">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="inner-content">
-            <div class="row">
-              <div class="col-lg-10 offset-lg-1">
-                <h2>Know Your Website SEO Score by Email</h2>
-                <form id="subscribe" action="" method="get">
-                  <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                  <button type="submit" id="form-submit" class="main-button ">Subscribe</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- Área de Vídeo desativada -->
-  <!-- <div id="video" class="our-videos section">
-    <div class="videos-left-dec">
-      <img src="assets/images/videos-left-dec.png" alt="">
-    </div>
-    <div class="videos-right-dec">
-      <img src="assets/images/videos-right-dec.png" alt="">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="naccs">
-            <div class="grid">
-              <div class="row">
-                <div class="col-lg-8">
-                  <ul class="nacc">
-                    <li class="active">
-                      <div>
-                        <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/JynGuQx4a1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <div class="overlay-effect">
-                            <a href="#"><h4>Project One</h4></a>
-                            <span>SEO &amp; Marketing</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/RdJBSFpcO4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <div class="overlay-effect">
-                            <a href="#"><h4>Second Project</h4></a>
-                            <span>Advertising &amp; Marketing</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZlfAjbQiL78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <div class="overlay-effect">
-                            <a href="#"><h4>Project Three</h4></a>
-                            <span>Digital &amp; Marketing</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div class="thumb">
-                          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/mx1WseE7-0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          <div class="overlay-effect">
-                            <a href="#"><h4>Fourth Project</h4></a>
-                            <span>SEO &amp; Advertising</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-4">
-                  <div class="menu">
-                    <div class="active">
-                      <div class="thumb">
-                        <img src="assets/images/video-thumb-01.png" alt="">
-                        <div class="inner-content">
-                          <h4>Project One</h4>
-                          <span>SEO &amp; Marketing</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <img src="assets/images/video-thumb-02.png" alt="">
-                        <div class="inner-content">
-                          <h4>Second Project</h4>
-                          <span>Advertising &amp; Marketing</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <img src="assets/images/video-thumb-03.png" alt="Marketing">
-                        <div class="inner-content">
-                          <h4>Project Three</h4>
-                          <span>Digital &amp; Marketing</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="thumb">
-                        <img src="assets/images/video-thumb-04.png" alt="SEO Work">
-                        <div class="inner-content">
-                          <h4>Fourth Project</h4>
-                          <span>SEO &amp; Advertising</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>             
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <div id="contact" class="contact-us section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7">
-          <div class="section-heading">
-            <h2>Como nos encontrar</h2>            
-            <!-- Original -->
-            <!-- <h2>Onde estamos <em>Contact</em> us via the <span>HTML form</span></h2> -->
-            <div id="map">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.588344277122!2d-35.75537762431194!3d-9.634936190367428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x703f8c3d8b0b1b1%3A0x3c3e3e3e3e3e3e3e!2sR.%20Dr.%20Ivaldo%20Marinho%2C%2062%20-%20Jacintinho%2C%20Macei%C3%B3%20-%20AL%2C%2057042-080!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-                width="100%" 
-                height="360" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-
-            </div>
-            <div class="info">
-              <!-- Números de contato -->
-              <span><i class="fa fa-phone"></i> <a href="#"> <br>(82) 9.8839-0900</a></span>
-              <span><i class="fa fa-envelope"></i> <a href="#"> <br>contato@graficamaceio.com</a></span>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-lg-5 align-self-center">
-          <form id="contact" action="" method="get">
-            <div class="row">
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="name" name="name" id="name" placeholder="Nome" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="surname" name="surname" id="surname" placeholder="Sobrenome" autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Digite seu Email" required="">
-                </fieldset>
-              </div>
-              <!-- <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
-                </fieldset>
-              </div> -->
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="main-button">Enviar mensagme</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-dec">
-      <img src="Assets/images/contact-dec.png" alt="">
-    </div>
-    <div class="contact-left-dec">
-      <img src="Assets/images/contact-left-dec.png" alt="">
-    </div>
-
-  </div>
-
-  <div class="footer-dec">
-    <img src="assets/images/footer-dec.png" alt="">
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="about footer-item">
-            <div class="logo">
-              <a href="#"><img src="Assets/images/logo.png" alt="Onix Digital TemplateMo"></a>
-            </div>
-            <a href="#">graficamaceio@contato.com</a>
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <!-- <li><a href="#"><i class="fa fa-behance"></i></a></li> -->
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="services footer-item">
-            <h4>Serviços</h4>
-            <ul>
-              <li><a href="#">Garrafas personalizadas</a></li>
-              <li><a href="#">Windbanners</a></li>
-              <li><a href="#">Agendas</a></li>
-              <li><a href="#">Impressões personalizadas</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="community footer-item">
-            <h4>Contato</h4>
-            <ul>
-              <li><a href="#">(82) 9.8839-0900</a></li>
-              <li><a href="#">contato@graficamaceio.com</a></li>
-  
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3">
-          <div class="subscribe-newsletters footer-item">
-            <h4>Entrar emc contato</h4>
-            <p>Envie uma mensagem rápida para nosso Whatsapp</p>
-            <form action="#" method="get">
-              <input type="text" name="email" id="email" placeholder="Enviar mensagem" required="">
-              <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-lg-12">
-          <div class="copyright">
-            <p>Grafica Maceió © 2025. Todos os direitos reservados. 
-            <br>
-            <!-- Site criado  <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a><br>
-            Distributed by <a href="https://themewagon.com">Themewagon</a> -->
-          </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="Assets/js/owl-carousel.js"></script>
-  <script src="Assets/js/animation.js"></script>
-  <script src="Assets/js/imagesloaded.js"></script>
-  <script src="Assets/js/custom.js"></script>
 
   <script>
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
-      var numberIndex = $(this).index();
+    // QUESTÕES (20 teóricas, 10 calculo). Cada questão tem: text, options[A-D], correct (A-D)
+    const questions = [
+      {id:1, type:'teo', text:'1) Ondas sonoras no ar são do tipo:', options:{A:'Transversais',B:'Longitudinais',C:'Eletromagnéticas',D:'Superficiais'}, correct:'B'},
+      {id:2, type:'teo', text:'2) O que é timbre de um instrumento?', options:{A:'A intensidade do som',B:'A frequência fundamental',C:'A composição harmônica que diferencia sons com mesma altura',D:'O tempo de reverberação'}, correct:'C'},
+      {id:3, type:'teo', text:'3) O efeito Doppler altera principalmente:', options:{A:'A intensidade do som',B:'A velocidade do som',C:'A frequência percebida',D:'A amplitude média'}, correct:'C'},
+      {id:4, type:'teo', text:'4) Eco ocorre quando o som refletido retorna após aproximadamente:', options:{A:'< 0.001 s',B:'> 0.1 s (perceptível como repetição)',C:'Entre 0.001 e 0.01 s',D:'Sempre como reverberação indistinta'}, correct:'B'},
+      {id:5, type:'teo', text:'5) A relação entre amplitude das partículas e intensidade sonora é:', options:{A:'I ∝ A',B:'I ∝ A^2',C:'I ∝ 1/A',D:'I é independente de A'}, correct:'B'},
+      {id:6, type:'teo', text:'6) Em um tubo aberto em ambas as extremidades, os harmônicos presentes são:', options:{A:'Somente impares',B:'Somente pares',C:'Todos os inteiros (1,2,3...)',D:'Nenhum harmônico'}, correct:'C'},
+      {id:7, type:'teo', text:'7) A frequência audível para a maioria dos humanos está aproximadamente entre:', options:{A:'20 Hz a 20 kHz',B:'0,2 Hz a 2 kHz',C:'200 Hz a 20 kHz',D:'2 kHz a 200 kHz'}, correct:'A'},
+      {id:8, type:'teo', text:'8) O fenômeno de batimentos (beats) ocorre quando:', options:{A:'Duas fontes com frequências muito diferentes são emitidas',B:'Duas fontes com frequências próximas interferem',C:'O som recebe um eco',D:'Há absorção seletiva de frequências'}, correct:'B'},
+      {id:9, type:'teo', text:'9) A velocidade do som no ar depende principalmente de:', options:{A:'Humidade apenas',B:'Temperatura do ar',C:'Frequência do som',D:'Cor do objeto emissor'}, correct:'B'},
+      {id:10, type:'teo', text:'10) A pressão sonora eficaz é relacionada à intensidade pela expressão I = p_rms^2 / (ρ c). O que são ρ e c?', options:{A:'ρ densidade do meio e c velocidade do som',B:'ρ constante adiabática e c capacitância',C:'ρ resistência e c calor específico',D:'ρ e c são constantes universais'}, correct:'A'},
+      {id:11, type:'teo', text:'11) A reflexão total de ondas sonoras não ocorre em qual meio?', options:{A:'Transição ar -> água',B:'Transição ar -> vácuo',C:'Transição entre sólidos',D:'Reflexão em paredes rígidas'}, correct:'B'},
+      {id:12, type:'teo', text:'12) Reverberação excessiva em uma sala causa:', options:{A:'Melhora a inteligibilidade da fala',B:'Dificulta a compreensão da fala',C:'Aumenta apenas as baixas frequências',D:'Elimina ecos'}, correct:'B'},
+      {id:13, type:'teo', text:'13) O que caracteriza uma onda estacionária?', options:{A:'Movimento de propagação constante',B:'Pontos fixos chamados nós e antinós',C:'Somente ocorre no vácuo',D:'Sempre gera batimentos'}, correct:'B'},
+      {id:14, type:'teo', text:'14) Intensidade sonora em decibéis é uma escala:', options:{A:'Linear',B:'Logarítmica',C:'Quadrática',D:'Aritmética'}, correct:'B'},
+      {id:15, type:'teo', text:'15) O ouvido humano distingue melhor frequências na região:', options:{A:'Infrassom',B:'Região média (≈1–4 kHz)',C:'Ultrassom',D:'Acima de 20 kHz'}, correct:'B'},
+      {id:16, type:'teo', text:'16) Absorção sonora em materiais é maior quando:', options:{A:'Material é duro e liso',B:'Material é poroso e fibroso',C:'Material é metálico',D:'Superfície é reflexiva'}, correct:'B'},
+      {id:17, type:'teo', text:'17) O deslocamento das moléculas de ar numa onda sonora é:', options:{A:'Perpendicular à direção de propagação',B:'Paralela à direção de propagação',C:'Circular',D:'Zero'}, correct:'B'},
+      {id:18, type:'teo', text:'18) A velocidade do som em gases é independente de:', options:{A:'Temperatura',B:'Composição do gás',C:'Pressão absoluta se temperatura for constante',D:'Massa molar'}, correct:'C'},
+      {id:19, type:'teo', text:'19) Um microfone converte:', options:{A:'Som em luz',B:'Sinal elétrico em som',C:'Som em sinal elétrico',D:'Energia elétrica em calor'}, correct:'C'},
+      {id:20, type:'teo', text:'20) O nível de pressão sonora (SPL) de referência I_0 usado em acústica é tipicamente:', options:{A:'1 W/m²',B:'1e-6 W/m²',C:'1e-12 W/m²',D:'0 W/m²'}, correct:'C'},
+      // calculo
+      {id:21, type:'calc', text:'21) (Cálculo) Um alto-falante emite tom de frequência 440 Hz. Considerando velocidade do som 340 m/s, qual é o comprimento de onda aproximado?', options:{A:'0.77 m',B:'1.27 m',C:'0.34 m',D:'3.40 m'}, correct:'A'},
+      {id:22, type:'calc', text:'22) (Cálculo) Um tubo aberto nas duas extremidades ressoa no fundamental a 256 Hz. Usando v=340 m/s, qual a aproximação do comprimento L do tubo?', options:{A:'0.33 m',B:'0.66 m',C:'1.32 m',D:'0.16 m'}, correct:'B'},
+      {id:23, type:'calc', text:'23) (Cálculo) Duas notas soam em 440 Hz e 444 Hz. A frequência de batimento é:', options:{A:'2 Hz',B:'4 Hz',C:'88 Hz',D:'0 Hz'}, correct:'B'},
+      {id:24, type:'calc', text:'24) (Cálculo - Doppler) Um observador se aproxima de uma fonte estacionária a 30 m/s; fonte emite 1000 Hz; v=340 m/s. Frequência percebida ≈', options:{A:'970 Hz',B:'1000 Hz',C:'1088 Hz',D:'1030 Hz'}, correct:'C'},
+      {id:25, type:'calc', text:'25) (Cálculo) Se um som de 60 dB tem intensidade I, e a intensidade aumenta 10 vezes, o novo nível em dB será (aprox):', options:{A:'60 dB',B:'70 dB',C:'66 dB',D:'120 dB'}, correct:'B'},
+      {id:26, type:'calc', text:'26) (Cálculo) Dois alto-falantes idênticos produzem individualmente 60 dB. O nível combinado é aproximadamente:', options:{A:'60 dB',B:'63 dB',C:'66 dB',D:'120 dB'}, correct:'B'},
+      {id:27, type:'calc', text:'27) (Cálculo) Intensidade I = 1×10^-6 W/m². Em decibéis (referência 1×10^-12 W/m²), o nível é:', options:{A:'40 dB',B:'50 dB',C:'60 dB',D:'120 dB'}, correct:'C'},
+      {id:28, type:'calc', text:'28) (Cálculo) Período de uma onda T = 0.005 s. A frequência é:', options:{A:'50 Hz',B:'200 Hz',C:'500 Hz',D:'1000 Hz'}, correct:'B'},
+      {id:29, type:'calc', text:'29) (Cálculo) Velocidade do som no ar (aprox 20°C) é 343 m/s. Para f=1000 Hz, comprimento de onda ≈', options:{A:'0.0343 m',B:'0.343 m',C:'3.43 m',D:'34.3 m'}, correct:'B'},
+      {id:30, type:'calc', text:'30) (Cálculo) Um tubo fechado em uma extremidade de comprimento 0.25 m tem ressonância no modo fundamental. Com v=340 m/s, f≈', options:{A:'85 Hz',B:'170 Hz',C:'340 Hz',D:'3400 Hz'}, correct:'C'}
+    ];
 
-      if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
+    // render
+    const form = document.getElementById('quiz');
+    questions.forEach(q => {
+      const div = document.createElement('div');
+      div.className = 'q';
+      const h = document.createElement('h3');
+      h.innerText = q.text;
+      div.appendChild(h);
+      const opts = document.createElement('div');
+      opts.className = 'options';
+      ['A','B','C','D'].forEach(letter => {
+        const id = 'q'+q.id+'_'+letter;
+        const label = document.createElement('label');
+        label.innerHTML = `<input type='radio' name='q${q.id}' value='${letter}' id='${id}' /> <strong>${letter}.</strong> ${q.options[letter]}`;
+        opts.appendChild(label);
+      });
+      div.appendChild(opts);
+      form.appendChild(div);
+    });
 
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+    // logic
+    document.getElementById('check').addEventListener('click', e=>{
+      e.preventDefault();
+      let correct=0;
+      questions.forEach(q=>{
+        const radios = document.getElementsByName('q'+q.id);
+        let sel = null;
+        for(const r of radios) if(r.checked) { sel=r.value; break; }
+        const el = document.querySelector('#q'+q.id+'_'+(sel||'A')).closest('label')?.parentElement || null;
+        // highlight correct/incorrect
+        const qdiv = document.querySelector(`.q:nth-child(${q.id})`);
+        if(sel===q.correct){ correct++; qdiv.style.border='2px solid #c9f7d6' } else { qdiv.style.border='2px solid #ffd6b3' }
+      });
+      alert(`Você acertou ${correct} de ${questions.length} questões.`);
+    });
 
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
+    document.getElementById('reset').addEventListener('click', ()=>{
+      form.reset();
+      document.querySelectorAll('.q').forEach(d=>d.style.border='1px dashed #ffd6b3');
+    });
+
+    document.getElementById('showKey').addEventListener('click', ()=>{
+      const key = document.getElementById('answerKey');
+      key.style.display = key.style.display==='block'? 'none':'block';
+      if(key.style.display==='block'){
+        key.innerHTML = '<strong>Gabarito (letra correta):</strong><br/>' + questions.map(q=>`${q.id}. ${q.correct}`).join('<br/>') + '<br/><br/><em>Fontes: bancos de questões ENEM/FUVEST/ITA/FGV, listas didáticas (Mundo Educação, Brasil Escola, EstudePrisma, QConcursos).</em>';
+      }
     });
   </script>
 </body>
 </html>
+p
